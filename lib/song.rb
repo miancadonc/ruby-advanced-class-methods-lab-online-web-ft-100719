@@ -31,8 +31,8 @@ class Song
     self.all.find{|song| song.name == song_name}
   end
   
-  def find_by_name
-    self
+  def self.find_or_create_by_name(song_name)
+    self.all.include?(song_name) ? self.find_by_name(song_name) : selfcre
   end
 
 end
