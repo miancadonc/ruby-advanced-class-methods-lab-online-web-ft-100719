@@ -9,6 +9,8 @@ class Song
   def self.names
     self.all.collect{|song| song.name}
   end
+  
+  
 
   def save
     self.class.all << self
@@ -47,9 +49,20 @@ class Song
   end
   
   def self.alphabetical
-    self.all.sort_by{|a, b| b.name <=> a.name}
+   alphabetical_names =  self.names.sort_by{|a, b| b.name <=> a.name}
+   
   end
   
+  def self.new_from_filename
+    
+  end
   
+  def self.create_from_filename
+    
+  end
+  
+  def self.destroy_all
+    self.all.clear
+  end
 
 end
