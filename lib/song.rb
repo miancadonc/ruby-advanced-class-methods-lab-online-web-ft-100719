@@ -34,5 +34,9 @@ class Song
   def self.find_or_create_by_name(song_name)
     self.all.include?(song_name) ? self.find_by_name(song_name) : self.create_by_name(song_name)
   end
+  
+  def self.alphabetical
+    self.all.sort_by{|a, b| b <=> a}
+  end
 
 end
