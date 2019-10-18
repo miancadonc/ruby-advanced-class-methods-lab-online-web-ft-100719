@@ -58,7 +58,7 @@ class Song
     new_song = self.new
     song_data = filename.split(" - ")
     new_song.name = song_data[0]
-    new_song.artist_name = song_data[1].split(".").first.join
+    new_song.artist_name = song_data[1].split(".").first
     new_song
   end
   
