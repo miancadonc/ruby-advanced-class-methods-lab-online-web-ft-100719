@@ -5,6 +5,10 @@ class Song
   def self.all
     @@all
   end
+  
+  def self.names
+    self.all.collect{|song| song.name}
+  end
 
   def save
     self.class.all << self
@@ -34,11 +38,11 @@ class Song
   end
   
   def self.find_or_create_by_name(song_name)
-    self.all.include?(song_name) ? self.find_by_name(song_name) : self.create_by_name(song_name)
+    self.all.include?(song_name.name) ? self.find_by_name(song_name) : self.create_by_name(song_name)
   end
   
   def self.alphabetical
-    self.all.sort_by{|a, b| b <=> a}
+    self.all.sort_by{|a, b| b.name <=> a.name}
   end
 
 end
