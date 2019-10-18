@@ -50,7 +50,7 @@ class Song
   
   def self.alphabetical
    #alphabetical_names =  self.names.sort_by{|a, b| b <=> a}
-   
+   self.all.sort_by{||}
    
   end
   
